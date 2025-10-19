@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stan The Handyman | Local Home Repair & Renovation</title>
+    <!-- Load Inter font via Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic professional icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom font import (Inter is standard for Tailwind, but ensuring it) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            /* Define Stan's core brand color: a strong, trustworthy red */
+            --color-stan-red: #E6003B;
+            --color-stan-dark: #1F1F1F;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-stan-dark);
+            background-color: #f7f7f7;
+        }
+        /* Customizing Tailwind colors */
+        .bg-stan-red { background-color: var(--color-stan-red); }
+        .text-stan-red { color: var(--color-stan-red); }
+        .border-stan-red { border-color: var(--color-stan-red); }
+        .bg-stan-dark { background-color: var(--color-stan-dark); }
+
+        /* General element styling */
+        .section-padding {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Hero specific styling: A slight diagonal cut for dynamism */
+        .hero-bg-cut {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        /* Ensure icon replacement script runs */
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </style>
+</head>
+<body>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'stan-red': '#E6003B',
+                        'stan-dark': '#1F1F1F',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Header and Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <!-- Using the provided logo image URL, with alt text -->
+                <img src="logo (8).png" alt="Stan The Handyman Logo" class="h-10 w-auto">
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="text-stan-dark hover:text-stan-red transition duration-300 font-medium">Services</a>
+                <a href="#projects" class="text-stan-dark hover:text-stan-red transition duration-300 font-medium">Projects</a>
+                <a href="#reviews" class="text-stan-dark hover:text-stan-red transition duration-300 font-medium">Reviews</a>
+                <a href="#blog" class="text-stan-dark hover:text-stan-red transition duration-300 font-medium">Blog</a>
+                <a href="#estimate" class="px-6 py-3 bg-stan-red text-white font-semibold rounded-lg shadow-lg hover:bg-opacity-90 transition duration-300">
+                    Free Estimate
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-stan-dark hover:bg-gray-100 transition duration-300">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white shadow-xl py-2">
+            <a href="#services" class="block px-4 py-2 text-stan-dark hover:bg-gray-50">Services</a>
+            <a href="#projects" class="block px-4 py-2 text-stan-dark hover:bg-gray-50">Projects</a>
+            <a href="#reviews" class="block px-4 py-2 text-stan-dark hover:bg-gray-50">Reviews</a>
+            <a href="#blog" class="block px-4 py-2 text-stan-dark hover:bg-gray-50">Blog</a>
+            <a href="#estimate" class="block px-4 py-3 bg-stan-red text-white text-center font-semibold mt-2 hover:bg-opacity-90">
+                Request Free Estimate
+            </a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="bg-stan-dark text-white relative hero-bg-cut pb-20 md:pb-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 flex flex-col md:flex-row items-center justify-between">
+            <!-- Text Content -->
+            <div class="md:w-1/2 mb-10 md:mb-0 z-10">
+                <p class="text-lg uppercase tracking-widest mb-3 text-stan-red font-semibold">Local, Trusted, Reliable</p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    Expert Handyman Services. <span class="text-stan-red">Done Right.</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 max-w-lg">
+                    Specializing in a wide variety of home repairs and renovations to keep your property in perfect shape.
+                </p>
+                <!-- Stronger CTA -->
+                <a href="#estimate" class="inline-block px-10 py-4 text-xl bg-stan-red text-white font-bold rounded-xl shadow-2xl hover:bg-opacity-90 transition transform hover:scale-105 duration-300 ease-in-out">
+                    Get Your Free Quote Today
+                </a>
+            </div>
+
+            <!-- Visual - Using a placeholder inspired by the original van/Stan image -->
+            <div class="md:w-1/2 relative flex justify-end">
+                <img src="/181025/Expert-Handyman-Services.jpg"
+                    alt="Stan The Handyman's work van and tools"
+                    class="rounded-2xl shadow-2xl w-full max-w-md md:max-w-lg object-cover">
+            </div>
+        </div>
+        <!-- Background element (retaining the angled look from the original design) -->
+        <div class="absolute inset-0 bg-gray-900 opacity-0 hero-bg-cut"></div>
+    </section>
+
+    <!-- Tagline/Specialization Section -->
+    <section class="section-padding py-12 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-stan-dark">
+                We're Your One Stop for All Home <span class="text-stan-red">Repair & Maintenance.</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section class="section-padding bg-gray-50" id="about">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
+                <!-- Stan's Photo (Placeholder) -->
+                <div class="lg:w-1/3 mb-8 lg:mb-0 relative">
+                    <img src="/181025/Stan-The-Handyman.jpg"
+                        alt="Stan The Handyman"
+                        class="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-stan-red/50">
+                    <!-- Trust badge overlay -->
+                    <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-xl">
+                        <i data-lucide="badge-check" class="text-stan-red w-8 h-8"></i>
+                    </div>
+                </div>
+
+                <!-- About Text Content -->
+                <div class="lg:w-2/3">
+                    <p class="text-base uppercase tracking-widest mb-3 text-stan-red font-semibold">Meet the Pro</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-stan-dark">About Stan The Handyman</h2>
+                    <p class="text-gray-700 mb-4 text-lg leading-relaxed">
+                        Hi, I'm Stan! For over 15 years, I've been helping homeowners in our community with honest, high-quality repair and renovation work. I believe in straightforward communication, showing up on time, and delivering results that last. My business is built on trust, and I treat every home like it's my own.
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        Whether it's a small leaky faucet or a full kitchen remodel, my goal is to provide reliable, hassle-free service. Let me take the stress out of your next home project.
+                    </p>
+                    <a href="#services" class="inline-block text-stan-red font-semibold hover:underline">
+                        See What We Can Do <i data-lucide="arrow-right" class="inline-block w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Our Services Grid -->
+    <section class="section-padding" id="services">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-stan-dark">Our Core Services</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Reliable solutions for every area of your home, from quick fixes to major upgrades.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1: Plumbing -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group">
+                    <i data-lucide="droplet" class="w-10 h-10 text-stan-red mb-4 group-hover:rotate-12 transition duration-500"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-stan-dark">Plumbing Fixes</h3>
+                    <p class="text-gray-600 mb-4">Leaky faucets, pipe repairs, toilet installation, and drain cleaning services.</p>
+                    <a href="#estimate" class="text-stan-red font-medium group-hover:text-stan-dark transition duration-300">
+                        Learn More <i data-lucide="arrow-right" class="inline-block w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2: Electrical -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group">
+                    <i data-lucide="zap" class="w-10 h-10 text-stan-red mb-4 group-hover:scale-110 transition duration-500"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-stan-dark">Electrical Work</h3>
+                    <p class="text-gray-600 mb-4">Outlet repair, light fixture installation, ceiling fan mounting, and wiring.</p>
+                    <a href="#estimate" class="text-stan-red font-medium group-hover:text-stan-dark transition duration-300">
+                        Learn More <i data-lucide="arrow-right" class="inline-block w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3: Carpentry -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group">
+                    <i data-lucide="hammer" class="w-10 h-10 text-stan-red mb-4 group-hover:animate-bounce transition duration-500"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-stan-dark">Carpentry & Trim</h3>
+                    <p class="text-gray-600 mb-4">Custom shelving, crown molding, door installation, and deck repair.</p>
+                    <a href="#estimate" class="text-stan-red font-medium group-hover:text-stan-dark transition duration-300">
+                        Learn More <i data-lucide="arrow-right" class="inline-block w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 4: Flooring -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group">
+                    <i data-lucide="layers-3" class="w-10 h-10 text-stan-red mb-4 group-hover:rotate-45 transition duration-500"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-stan-dark">Flooring Installation</h3>
+                    <p class="text-gray-600 mb-4">Hardwood, laminate, tile, and vinyl plank installation or repair services.</p>
+                    <a href="#estimate" class="text-stan-red font-medium group-hover:text-stan-dark transition duration-300">
+                        Learn More <i data-lucide="arrow-right" class="inline-block w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 5: Kitchens -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group">
+                    <i data-lucide="microwave" class="w-10 h-10 text-stan-red mb-4 group-hover:scale-110 transition duration-500"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-stan-dark">Kitchen Remodels</h3>
+                    <p class="text-gray-600 mb-4">Cabinet installation, backsplash tiling, minor appliance hookups, and counter work.</p>
+                    <a href="#estimate" class="text-stan-red font-medium group-hover:text-stan-dark transition duration-300">
+                        Learn More <i data-lucide="arrow-right" class="inline-block w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 6: Bathrooms -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group">
+                    <i data-lucide="bathtub" class="w-10 h-10 text-stan-red mb-4 group-hover:rotate-6 transition duration-500"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-stan-dark">Bathroom Renovations</h3>
+                    <p class="text-gray-600 mb-4">Vanity installation, shower door fitting, tiling, and fan replacement.</p>
+                    <a href="#estimate" class="text-stan-red font-medium group-hover:text-stan-dark transition duration-300">
+                        Learn More <i data-lucide="arrow-right" class="inline-block w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Our Projects Gallery Section -->
+    <section class="section-padding bg-stan-dark text-white" id="projects">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Recent Work</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                See the quality and attention to detail we bring to every home.
+            </p>
+
+            <!-- Responsive 2-column or 3-column grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 (Placeholder inspired by original image) -->
+                <div class="relative overflow-hidden rounded-xl shadow-xl group">
+                    <img src="/181025/home1.jpg"
+                        alt="Completed exterior home renovation"
+                        class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 flex items-end p-4 group-hover:bg-opacity-70 transition duration-300">
+                        <p class="text-lg font-semibold border-b-2 border-stan-red">Full Exterior Overhaul</p>
+                    </div>
+                </div>
+                <!-- Project 2 (Placeholder inspired by original image) -->
+                <div class="relative overflow-hidden rounded-xl shadow-xl group">
+                    <img src="/181025/Modern-Kitchen-Remodel.jpg"
+                        alt="Completed modern kitchen remodel"
+                        class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 flex items-end p-4 group-hover:bg-opacity-70 transition duration-300">
+                        <p class="text-lg font-semibold border-b-2 border-stan-red">Modern Kitchen Remodel</p>
+                    </div>
+                </div>
+                <!-- Project 3 (Placeholder inspired by original image) -->
+                <div class="relative overflow-hidden rounded-xl shadow-xl group">
+                    <img src="/181025/Luxury-Bathroom-Update.jpg"
+                        alt="Completed bathroom tiling and vanity install"
+                        class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 flex items-end p-4 group-hover:bg-opacity-70 transition duration-300">
+                        <p class="text-lg font-semibold border-b-2 border-stan-red">Luxury Bathroom Update</p>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="relative overflow-hidden rounded-xl shadow-xl group">
+                    <img src="/181025/Outdoor-Deck-Restoration.jpg"
+                        alt="Finished deck cleaning and staining"
+                        class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 flex items-end p-4 group-hover:bg-opacity-70 transition duration-300">
+                        <p class="text-lg font-semibold border-b-2 border-stan-red">Outdoor Deck Restoration</p>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="relative overflow-hidden rounded-xl shadow-xl group">
+                    <img src="/181025/Interior-Drywall_ &-Paint.jpg"
+                        alt="New attic insulation and drywall"
+                        class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 flex items-end p-4 group-hover:bg-opacity-70 transition duration-300">
+                        <p class="text-lg font-semibold border-b-2 border-stan-red">Interior Drywall & Paint</p>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="relative overflow-hidden rounded-xl shadow-xl group">
+                    <img src="/181025/New-Perimeter-Fencing.jpg"
+                        alt="Completed fence installation and repair"
+                        class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 flex items-end p-4 group-hover:bg-opacity-70 transition duration-300">
+                        <p class="text-lg font-semibold border-b-2 border-stan-red">New Perimeter Fencing</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-12 inline-block px-8 py-3 bg-stan-red text-white font-semibold rounded-lg shadow-xl hover:bg-opacity-90 transition duration-300">
+                View All Projects
+            </a>
+        </div>
+    </section>
+
+    <!-- NEW: 5. Reviews / Testimonials Section -->
+    <section class="section-padding bg-gray-50" id="reviews">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-stan-dark">What Our Customers Say</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Real feedback from your neighbors who trust Stan's quality service.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-stan-red flex flex-col h-full">
+                    <div class="flex mb-4 text-yellow-500">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-lg italic text-gray-700 mb-4 flex-grow">
+                        "Stan fixed my burst pipe quickly and professionally. He was upfront about the cost and left the area cleaner than he found it. Highly recommend for any emergency repairs!"
+                    </p>
+                    <p class="font-semibold text-stan-dark mt-auto">— Martha K.</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-stan-red flex flex-col h-full">
+                    <div class="flex mb-4 text-yellow-500">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-lg italic text-gray-700 mb-4 flex-grow">
+                        "We hired Stan for a full kitchen backsplash and new flooring. The craftsmanship is excellent. He's knowledgeable, friendly, and truly a master of his trade."
+                    </p>
+                    <p class="font-semibold text-stan-dark mt-auto">— The Rodriguez Family</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-stan-red flex flex-col h-full">
+                    <div class="flex mb-4 text-yellow-500">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-lg italic text-gray-700 mb-4 flex-grow">
+                        "Finally found a reliable local handyman! Stan installed all our new light fixtures and dimmer switches perfectly. His communication and pricing transparency are top-notch."
+                    </p>
+                    <p class="font-semibold text-stan-dark mt-auto">— Peter L.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: 6. Blog Roll Section -->
+    <section class="section-padding" id="blog">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-stan-dark">Home Improvement Insights</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Tips, tricks, and advice from Stan to help you maintain your home.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                    <img src="/181025/Fall-Maintenance-Tasks-to-Prevent-Winter-Damage.jpg"
+                        alt="Tools laid out for a DIY project"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6 text-left">
+                        <p class="text-sm text-gray-500 mb-1">Oct 10, 2025</p>
+                        <h3 class="text-xl font-semibold mb-3 text-stan-dark">3 Simple Fall Maintenance Tasks to Prevent Winter Damage</h3>
+                        <p class="text-gray-600 mb-4">Protect your home and save money by tackling these critical tasks before the first frost hits...</p>
+                        <a href="#" class="text-stan-red font-medium hover:underline">
+                            Read More <i data-lucide="chevron-right" class="inline-block w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                    <img src="/181025/Choosing-the-Right-Grout-for-Your-Bathroom.jpg"
+                        alt="A partially renovated room"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6 text-left">
+                        <p class="text-sm text-gray-500 mb-1">Sep 25, 2025</p>
+                        <h3 class="text-xl font-semibold mb-3 text-stan-dark">Tiling 101: Choosing the Right Grout for Your Bathroom</h3>
+                        <p class="text-gray-600 mb-4">Grout is more than just filler—it's a critical component for waterproofing and aesthetics. Here's what to look for...</p>
+                        <a href="#" class="text-stan-red font-medium hover:underline">
+                            Read More <i data-lucide="chevron-right" class="inline-block w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                    <img src="/181025/Lower-Your-Home's-Energy-Bill-Right-Now.jpeg"
+                        alt="Energy efficient light bulb and thermostat"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6 text-left">
+                        <p class="text-sm text-gray-500 mb-1">Sep 1, 2025</p>
+                        <h3 class="text-xl font-semibold mb-3 text-stan-dark">5 Easy Ways to Lower Your Home's Energy Bill Right Now</h3>
+                        <p class="text-gray-600 mb-4">A few small fixes can make a big difference in your monthly costs. We cover caulking, weatherstripping, and more...</p>
+                        <a href="#" class="text-stan-red font-medium hover:underline">
+                            Read More <i data-lucide="chevron-right" class="inline-block w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Request Free Estimate Form Section -->
+    <section class="py-16 bg-stan-red" id="estimate">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-stretch lg:space-x-12">
+            <!-- Form Side -->
+            <div class="lg:w-1/2 p-8 md:p-12 bg-stan-dark/90 text-white rounded-xl shadow-2xl">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Request a Free Estimate</h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    Tell us about your project and Stan will get back to you within 24 hours. No obligation, guaranteed.
+                </p>
+
+                <form action="#" method="POST" class="space-y-4">
+                    <!-- Name and Email Group -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Full Name*" required
+                            class="w-full px-5 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:ring-stan-red focus:border-stan-red">
+                        <input type="email" placeholder="Your Email Address*" required
+                            class="w-full px-5 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:ring-stan-red focus:border-stan-red">
+                    </div>
+                    <!-- Phone and Service Group -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="tel" placeholder="Phone Number"
+                            class="w-full px-5 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:ring-stan-red focus:border-stan-red">
+                        <select
+                            class="w-full px-5 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:ring-stan-red focus:border-stan-red">
+                            <option value="">Select a Service</option>
+                            <option value="plumbing">Plumbing Fixes</option>
+                            <option value="electrical">Electrical Work</option>
+                            <option value="carpentry">Carpentry & Trim</option>
+                            <option value="remodel">Remodel / Renovation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <textarea placeholder="Tell us about your project (details, timeline, urgency)*" rows="4" required
+                        class="w-full px-5 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:ring-stan-red focus:border-stan-red"></textarea>
+
+                    <button type="submit"
+                        class="w-full px-6 py-4 text-xl bg-stan-red text-white font-bold rounded-lg shadow-xl hover:bg-opacity-90 transition transform hover:scale-[1.01] duration-300">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+
+            <!-- Visual Side (Placeholder inspired by original image) -->
+            <div class="lg:w-1/2 hidden lg:block relative rounded-xl shadow-2xl overflow-hidden">
+                <img src="/181025/Stan-Building-Trust.jpg"
+                    alt="Close up of quality stone wall exterior work"
+                    class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/30"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 8. Footer -->
+    <footer class="bg-stan-dark text-white pt-12 pb-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 border-b border-gray-700 pb-8">
+                <!-- Logo & Contact Info -->
+                <div>
+                    <img src="logo%20(8).png" alt="Stan The Handyman Logo" class="h-10 w-auto mb-4 invert">
+                    <p class="text-gray-400 mb-2">Serving the local community since 2008.</p>
+                    <p class="text-gray-300 font-semibold mt-4">Call Us Today</p>
+                    <a href="tel:5551234567" class="text-xl text-stan-red hover:text-white font-bold transition duration-300">(555) 123-4567</a>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-stan-red transition duration-300">About Stan</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-stan-red transition duration-300">Our Services</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-stan-red transition duration-300">Testimonials</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-stan-red transition duration-300">Home Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Map -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Service Areas</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>City Center</li>
+                        <li>Eastside</li>
+                        <li>North Hills</li>
+                        <li>The Valley</li>
+                    </ul>
+                </div>
+
+                <!-- Social/Hours -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Business Hours</h3>
+                    <p class="text-gray-400 mb-4">Mon - Fri: 8:00 AM - 5:00 PM</p>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-stan-red transition duration-300"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-stan-red transition duration-300"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-stan-red transition duration-300"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright and Legal -->
+            <div class="text-center text-gray-500 text-sm pt-4">
+                &copy; 2025 Stan The Handyman. All Rights Reserved By Developer B. Rashid. | Designed for Quality & Trust
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            // Toggle visibility
+            mobileMenu.classList.toggle('hidden');
+            // Change icon
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons(); // Re-render icon
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.querySelector('i').setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Initialize Lucide Icons on load
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
